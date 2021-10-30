@@ -6,7 +6,7 @@
 }
 
 ::selection {
-   color: white;
+   color: #ddcc99;
    background: #502200;
 }
 
@@ -58,7 +58,7 @@ body {
    background-attachment: fixed;
    background-size: cover;
    background-color: #ddcc99;
-   color: black;
+   color: #502200;
    overflow-wrap: break-word;
 }
 
@@ -77,6 +77,36 @@ img{
    text-align: center;
 }
 
+header {
+   position: fixed;
+}
+
+div.header-row {
+   display: flex;
+   justify-content: space-between;
+}
+
+hr {
+   color: #502200;
+}
+
+.slogan {
+   width: 20%;
+   border: 1px solid #502200;
+   text-align: center;
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.weather {
+   width: 20%;
+   border: 1px solid #502200;
+   text-align: center;
+   padding: 10px;
+}
+
 article{
    width: 300px;
    height: auto;
@@ -84,4 +114,22 @@ article{
    margin: 10px;
    padding: 10px;
    border: 1px solid #502200;
+   vertical-align: top;
+}
+
+a {
+   transition: 0.3s;
+}
+
+a:link {
+   color: #502200;
+}
+
+a:hover {
+   color: black;
+   text-shadow: 0 0 1px #502200, 0 0 2px #50220080, 0 0 3px #50220080;
+}
+
+a:visited {
+   color: #331100;
 }

@@ -3,17 +3,24 @@
    <head>
       <meta charset = "utf-8" />
       <meta name = "robots" content = "noindex, nofollow, noarchive, nocache, noimageindex, notranslate, nosnippet" />
-      <title>Just a Newspaper</title>
+      <title>Newspaper</title>
       <link rel = "stylesheet" href = "/assets/style.css" type = "text/css" />
       <script crossorigin src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-      <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
-      <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
-      <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+      <script src = "https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+      <script src = "https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+      <script src = "https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
       <script src = "script.js"></script>
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
    </head>
    <body ng-app = "newspaper">
-      <div class = "title">Newspaper</div>
+      <header>
+         <div class = "header-row">
+            <span class = "slogan">A an online newspaper with news from many news categories using a news api designed to look like a newspaper.</span>
+            <span class = "title">Newspaper</span>
+            <span class = "weather"></span>
+         </div>
+         <hr />
+      </header>
       <main id = "news-app" ng-controller = "newsCtrl">
          <div>
             <!--{{news.data}}-->
