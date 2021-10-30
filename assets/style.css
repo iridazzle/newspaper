@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Bitter&family=IBM+Plex+Sans&family=Merriweather&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Bitter&family=Courier+Prime&family=IBM+Plex+Sans&family=Merriweather&display=swap";
 @import "./fonts/WashingtonText.css";
 
 * {
@@ -51,7 +51,7 @@ html {
 body {
    margin: 0;
    min-height: 100%;
-   padding: 10px;
+   padding: 0;
    font-family: Merryweather, Bitter, "Times New Roman", serif;
    background-image: url(./sepia-paper.jpg);
    background-repeat: no-repeat;
@@ -79,6 +79,10 @@ img{
 
 header {
    position: fixed;
+   background-color: #ddcc99;
+   margin: 0 0 10px;
+   padding: 10px;
+   top: 0;
 }
 
 div.header-row {
@@ -87,10 +91,15 @@ div.header-row {
 }
 
 hr {
+   width: 75%;
+   border: none;
+   height: 1px;
    color: #502200;
+   background: #502200;
 }
 
 .slogan {
+   font-family: "Courier Prime", monospace;
    width: 20%;
    border: 1px solid #502200;
    text-align: center;
@@ -100,11 +109,14 @@ hr {
    align-items: center;
 }
 
-.weather {
+.time {
+   font-family: "Courier Prime", monospace;
+   font-size: 25px;
    width: 20%;
-   border: 1px solid #502200;
    text-align: center;
-   padding: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 article{
@@ -115,6 +127,10 @@ article{
    padding: 10px;
    border: 1px solid #502200;
    vertical-align: top;
+}
+
+main {
+   margin-top: 200px;
 }
 
 a {

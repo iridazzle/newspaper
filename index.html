@@ -17,7 +17,17 @@
          <div class = "header-row">
             <span class = "slogan">A an online newspaper with news from many news categories using a news api designed to look like a newspaper.</span>
             <span class = "title">Newspaper</span>
-            <span class = "weather"></span>
+            <span id = "time" class = "time">
+               <script>
+                  setInterval(function() {
+                     var d = new Date();
+                     var hour = d.getUTCHours();
+                     var min = d.getUTCMinutes();
+                     var sec = d.getUTCSeconds();
+                     document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec + " UTC";
+                  }, 1000);
+               </script>
+            </span>
          </div>
          <hr />
       </header>
