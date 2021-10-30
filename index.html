@@ -5,6 +5,7 @@
       <meta name = "robots" content = "noindex, nofollow, noarchive, nocache, noimageindex, notranslate, nosnippet" />
       <title>Newspaper</title>
       <link rel = "stylesheet" href = "/assets/style.css" type = "text/css" />
+      <link rel = "stylesheet" href = "/assets/serif-font.css" type = "text/css" />
       <script crossorigin src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
       <script src = "https://unpkg.com/react@^16/umd/react.production.min.js"></script>
       <script src = "https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
@@ -12,12 +13,12 @@
       <script src = "script.js"></script>
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
    </head>
-   <body ng-app = "newspaper">
+   <body ng-app = "newspaper" class = "serif-main">
       <header>
          <div class = "header-row">
-            <span class = "slogan">A an online newspaper using a news api designed to look like a newspaper.</span>
+            <span class = "slogan">Just another news aggregate.</span>
             <span class = "title">Newspaper</span>
-            <span id = "time" class = "head-space">
+            <span id = "time" class = "time serif-mono">
                <script>
                   setInterval(function() {
                      var d = new Date();
@@ -31,8 +32,8 @@
          </div>
          <hr />
          <div class = "header-row">
-            <span class = "head-space">VOL.0...No.0 </span>
-            <span id = "date" class = "date">
+            <span class = "head-space-l">VOL.0...No.0 </span>
+            <span id = "date" class = "date serif-mono">
                <script>
                   setInterval(function() {
                      var d = new Date();
@@ -46,12 +47,25 @@
                   }, 1000);
                </script>
             </span>
-            <span class = "head-space">$0.00</span>
+            <span class = "head-space-r">$0.00</span>
          </div>
+         <hr />
+         <nav class = "menu">
+            <label class = "font-switch" id = "font-switch">
+               <input type = "checkbox" onchange = "switchFont()" />
+               <span class = "handle"></span>
+            </label>
+            <script>
+               function switchFont() {
+                  document.getElementById("font-switch").classList.toggle("checked");
+                  document.getElementsByClassName(".serif-main .serif-h").classList.toggle("open-dyslexic");
+                  document.getElementsByClassName(".serif-mono").classList.toggle("dyslexic-mono");
+               };
+            </script>
+         </nav>
       </header>
       <main id = "news-app" ng-controller = "newsCtrl">
-         <div>
-            <!--{{news.data}}-->
+         <div class = "articles">
             <article ng-repeat = "n in news">
                <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2>{{ n.title }}</h2></a>
                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />

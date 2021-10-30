@@ -1,0 +1,19 @@
+h1, h2, h3, h4, h5, h6, .slogan, .head-space-l, .head-space-r {
+   font-family: Gupter, Almendra, serif;
+}
+
+.time, .date {
+   font-family: "Courier Prime", monospace;
+}
+
+.serif-main {
+   font-family: Merryweather, Bitter, "Times New Roman", serif
+}
+
+.serif-h {
+   font-family: Gupter, Almendra, serif;
+}
+
+.serif-mono {
+   font-family: "Courier Prime", monospace;
+}

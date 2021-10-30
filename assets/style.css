@@ -1,5 +1,6 @@
-@import "https://fonts.googleapis.com/css2?family=Bitter&family=Courier+Prime&family=IBM+Plex+Sans&family=Merriweather&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Almendra&family=Bitter&family=Courier+Prime&family=Gupter&family=Merriweather&display=swap";
 @import "./fonts/WashingtonText.css";
+@import "./fonts/OpenDyslexic.css";
 
 * {
    box-sizing: border-box;
@@ -42,17 +43,28 @@
    scrollbar-color: transparent #ddcc99;
 }
 
+.open-dyslexic {
+   font-family: OpenDyslexic !important;
+}
+
+.dyslexic-mono {
+   font-family: OpenDyslexicMono !important;
+}
+
 html {
    margin: 0;
    height: 100%;
    width: 100%;
+   padding: 10px;
+   overflow: auto;
 }
 
 body {
    margin: 0;
-   min-height: 100%;
-   padding: 0;
-   font-family: Merryweather, Bitter, "Times New Roman", serif;
+   width: 100%;
+   height: 100%;
+   padding: 0px;
+   overflow: auto;
    background-image: url(./sepia-paper.jpg);
    background-repeat: no-repeat;
    background-attachment: fixed;
@@ -62,24 +74,20 @@ body {
    overflow-wrap: break-word;
 }
 
-h1, h2, h3, h4, h5, h6 {
-   font-family: "IBM Plex Sans", Verdana, sans-serif;
-}
-
 img{
-   width: 90%;
+   width: 100%;
    height: auto;
 }
 
 header {
-   position: fixed;
+   width: 100%;
    background-image: url(./sepia-paper.jpg);
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
    background-color: #ddcc99;
-   margin: 0 0 10px;
-   padding: 10px;
+   margin: 0;
+   padding: 0 20px;
    top: 0;
 }
 
@@ -90,7 +98,6 @@ div.header-row {
 }
 
 hr {
-   width: 75%;
    border: none;
    height: 1px;
    color: #502200;
@@ -98,13 +105,13 @@ hr {
 }
 
 .title{
-   font-family: "Washington Text";
    font-size: 100px;
    text-align: center;
+   font-family: "Washington Text";
 }
 
 .slogan {
-   font-family: "Courier Prime", monospace;
+   font-weight: bold;
    width: 20%;
    border: 1px solid #502200;
    text-align: center;
@@ -114,23 +121,83 @@ hr {
    align-items: center;
 }
 
-.head-space {
-   font-family: "Courier Prime", monospace;
+.head-space-l {
    font-size: 25px;
    width: 25%;
+   text-align: left;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.head-space-r {
+   font-size: 25px;
+   width: 25%;
+   text-align: right;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.time {
+   font-size: 25px;
+   width: 25%;
+   text-align: right;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.date {
+   font-size: 14px;
    text-align: center;
    display: flex;
    justify-content: center;
    align-items: center;
 }
 
-.date {
-   font-family: "Courier Prime", monospace;
-   font-size: 25px;
-   text-align: center;
+nav.menu {
    display: flex;
-   justify-content: center;
-   align-items: center;
+}
+
+.font-switch {
+   cursor: pointer;
+   position: relative;
+   background: gray;
+   width: 70px;
+   height: 35px;
+   border-radius: 50px;
+   transition: 0.3s;
+}
+
+input[type = checkbox] {
+   height: 0;
+   width: 0;
+   visibility: hidden;
+}
+
+.handle {
+   position: absolute;
+   top: 5px;
+   left: 5px;
+   width: 25px;
+   height: 25px;
+   background: #ffffff;
+   border-radius: 25px;
+   transition: 0.3s;
+}
+
+.checked {
+   background: #502200;
+}
+
+input:checked + .handle {
+   left: calc(100% - 5px);
+   transform: translateX(-100%);
+}
+
+.articles {
+   padding: 0 10px 10px;
 }
 
 article{
@@ -144,7 +211,7 @@ article{
 }
 
 main {
-   margin-top: 200px;
+   padding: 10px 0;
 }
 
 a {
