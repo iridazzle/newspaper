@@ -319,3 +319,73 @@ a:hover {
 a:visited {
    color: var(--vis);
 }
+
+@media screen and (max-width: 800px) {
+   ::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+   }
+   .slogan {
+      display: none;
+   }
+   .first {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 2;
+   }
+   .articles {
+      grid-template-columns: auto auto auto;
+   }
+}
+
+@media screen and (max-width: 650px) {
+   .time {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .first {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 2;
+   }
+   .articles {
+      grid-template-columns: auto auto;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .title {
+      font-size: 75px;
+   }
+   .head-space-l, .head-space-r {
+      font-size: 15px;
+   }
+}
+
+@media screen and (max-width: 450px) {
+   .first {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+   }
+   .articles {
+      grid-template-columns: auto;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .title {
+      font-size: 60px;
+   }
+   .date {
+      font-size: 12px;
+   }
+}
+
+@media screen and (max-width: 300px) {
+   .title {
+      font-size: 50px;
+   }
+   .head-space-l, .head-space-r {
+      display: none;
+   }
+}
