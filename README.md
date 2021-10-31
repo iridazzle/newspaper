@@ -1,2 +1,4 @@
 # newspaper
-just a newspaper aggregator website styled to look like a newspaper
+just a newspaper aggregate website
+
+has options to toggle font to OpenDyslexic and can change theme from light to dark
