@@ -14,53 +14,59 @@
          <label class = "font-switch" id = "font-switch">
             <input type = "checkbox" onchange = "switchFont()" />
             <span class = "handle font-handle">A</span>
+            <span class = "tooltiptext">Toggle OpenDyslexic Font</span>
          </label>
       </div>
       <header>
          <div class = "header-row">
             <span class = "slogan serif-h">Just another news aggregate.</span>
             <span class = "title">Newspaper</span>
-            <span id = "time" class = "time serif-mono">
-               <script>
-                  setInterval(function() {
-                     var d = new Date();
-                     var hour = String(d.getUTCHours()).padStart(2, "0");
-                     var min = String(d.getUTCMinutes()).padStart(2, "0");
-                     var sec = String(d.getUTCSeconds()).padStart(2, "0");
-                     document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec + " UTC";
-                  }, 1000);
-               </script>
-            </span>
+            <span id = "time" class = "time serif-mono"></span>
          </div>
          <hr />
          <div class = "header-row">
             <span class = "head-space-l serif-h">VOL.0...No.0 </span>
-            <span id = "date" class = "date serif-mono">
-               <script>
-                  setInterval(function() {
-                     var d = new Date();
-                     var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                     var day = weekday[d.getUTCDay()];
-                     var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                     var mon = month[d.getUTCMonth()];
-                     var date = d.getUTCDate();
-                     var year = d.getUTCFullYear();
-                     document.getElementById("date").innerHTML = day + ", " + mon + " " + date + ", " + year;
-                  }, 1000);
-               </script>
-            </span>
+            <span id = "date" class = "date serif-mono"></span>
             <span class = "head-space-r serif-h">$0.00</span>
          </div>
          <hr />
       </header>
       <main id = "news-app" ng-controller = "newsCtrl">
          <div class = "articles">
-            <article ng-repeat = "n in news">
-               <div ng-class="{first: $first}">
-                  <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
-                  <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
-                  <p>{{ n.snippet }}</p>
-               </div>
+            <article ng-repeat = "n in news1" ng-class = "{'first': $first}">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
+            </article>
+            <article ng-repeat = "n in news2">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
+            </article>
+            <article ng-repeat = "n in news3">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
+            </article>
+            <article ng-repeat = "n in news4">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
+            </article>
+            <article ng-repeat = "n in news5">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
+            </article>
+            <article ng-repeat = "n in news6">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
+            </article>
+            <article ng-repeat = "n in news7">
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+               <p>{{ n.snippet }}</p>
             </article>
          </div>
       </main>
