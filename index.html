@@ -9,7 +9,7 @@
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
       <script src = "./script.js"></script>
    </head>
-   <body ng-app = "newspaper" class = "serif-main">
+   <body ng-app = "newspaper">
       <div class = "options">
          <label class = "switch" id = "font-switch">
             <input type = "checkbox" onchange = "switchFont()" />
@@ -24,15 +24,15 @@
       </div>
       <header>
          <div class = "header-row">
-            <span class = "slogan serif-h">Just another news aggregate.</span>
+            <span class = "slogan">Just another news aggregate.</span>
             <span class = "title">Newspaper</span>
-            <span id = "time" class = "time serif-mono"></span>
+            <span id = "time" class = "time"></span>
          </div>
          <hr />
          <div class = "header-row">
-            <span class = "head-space-l serif-h">VOL.0...No.0 </span>
-            <span id = "date" class = "date serif-mono"></span>
-            <span class = "head-space-r serif-h">$0.00</span>
+            <span class = "head-space-l">VOL.0...No.0 </span>
+            <span id = "date" class = "date"></span>
+            <span class = "head-space-r">$0.00</span>
          </div>
          <hr />
       </header>
@@ -53,6 +53,7 @@
                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
                <p>{{ n.snippet }}</p>
             </article>
+            <!--
             <article ng-repeat = "n in news4">
                <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
@@ -73,6 +74,7 @@
                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
                <p>{{ n.snippet }}</p>
             </article>
+            -->
          </div>
       </main>
    </body>

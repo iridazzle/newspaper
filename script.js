@@ -23,6 +23,7 @@ newspaper.controller("newsCtrl", function($scope, $http) {
       newsData = response.data;
       $scope.news3 = newsData.data;
    });
+   /*
    var url4 = "https://api.thenewsapi.com/v1/news/top?locale=us&language=en&domains=apnews.com&page=4&api_token=" + THENEWSAPI;
    $http.get(url4)
    .then(function(response) {
@@ -53,22 +54,12 @@ newspaper.controller("newsCtrl", function($scope, $http) {
       newsData = response.data;
       $scope.news7 = newsData.data;
    });
+   */
 });
 
 function switchFont() {
    document.getElementById("font-switch").classList.toggle("checked");
-   var serifEls = document.querySelectorAll(".serif-main, .serif-h, .title")
-   for (var i = 0; i < serifEls.length; i++) {
-      var el = serifEls.item(i);
-      console.log(el);
-      el.classList.toggle("open-dyslexic");
-   }
-   var monoEls = document.getElementsByClassName("serif-mono");
-   for (var i = 0; i < monoEls.length; i++) {
-      var el = monoEls.item(i);
-      console.log(el);
-      el.classList.toggle("dyslexic-mono");
-   }
+   document.documentElement.classList.toggle("open-dyslexic");
 };
 
 function switchColor() {

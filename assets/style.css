@@ -2,13 +2,19 @@
 @import "./fonts/WashingtonText.css";
 @import "./fonts/OpenDyslexic.css";
 
-:root, :root.light {
+:root {
+   font-size: 16px;
    --im: url(./sepia-paper.jpg);
    --bg: #ddcc99;
    --tx:  #502200;
    --tx5: #50220080;
    --vis: #331100;
    --btn: #ffffff;
+   --glo: #000000;
+   --fserif: Merryweather, Bitter, "Times New Roman", serif;
+   --ft: "Washington Text";
+   --fhead: Gupter, Almendra, serif;
+   --fmono: "Courier Prime", monospace;
 }
 
 :root.dark {
@@ -18,6 +24,15 @@
    --tx5: #ddcc9980;
    --vis: #ccbb66;
    --btn: #000000;
+   --glo: #ffffff;
+}
+
+:root.open-dyslexic {
+   font-size: 12px;
+   --fserif: OpenDyslexic;
+   --ft: OpenDyslexic;
+   --fhead: OpenDyslexic;
+   --fmono: OpenDyslexicMono;
 }
 
 * {
@@ -61,28 +76,6 @@
    scrollbar-color: transparent var(--bg);
 }
 
-/* font groups */
-
-.serif-main {
-   font-family: Merryweather, Bitter, "Times New Roman", serif
-}
-
-.serif-h {
-   font-family: Gupter, Almendra, serif;
-}
-
-.serif-mono {
-   font-family: "Courier Prime", monospace;
-}
-
-.open-dyslexic {
-   font-family: OpenDyslexic !important;
-}
-
-.dyslexic-mono {
-   font-family: OpenDyslexicMono !important;
-}
-
 html {
    margin: 0;
    height: 100%;
@@ -95,6 +88,8 @@ body {
    margin: 0;
    width: 100%;
    height: 100%;
+   font-family: var(--fserif);
+   font-size: 1rem;
    padding: 0px;
    overflow: auto;
    background-image: var(--im);
@@ -109,6 +104,35 @@ body {
 img{
    width: 100%;
    height: auto;
+   filter: sepia(100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: var(--fhead);
+}
+
+h1 {
+   font-size: 2rem;
+}
+
+h2 {
+   font-size: 1.5rem;
+}
+
+h3 {
+   font-size: 1.25rem;
+}
+
+h4 {
+   font-size: 1.33rem;
+}
+
+h5 {
+   font-size: 0.83rem;
+}
+
+h6 {
+   font-size: 0.67rem;
 }
 
 .options {
@@ -149,12 +173,13 @@ hr {
 }
 
 .title{
-   font-size: 100px;
+   font-family: var(--ft);
+   font-size: 6.25rem;
    text-align: center;
-   font-family: "Washington Text";
 }
 
 .slogan {
+   font-family: var(--fhead);
    font-weight: bold;
    width: 20%;
    border: 1px solid var(--tx);
@@ -166,7 +191,8 @@ hr {
 }
 
 .head-space-l {
-   font-size: 25px;
+   font-family: var(--fhead);
+   font-size: 1.56rem;
    width: 25%;
    text-align: left;
    display: flex;
@@ -175,7 +201,8 @@ hr {
 }
 
 .head-space-r {
-   font-size: 25px;
+   font-family: var(--fhead);
+   font-size: 1.56rem;
    width: 25%;
    text-align: right;
    display: flex;
@@ -184,7 +211,8 @@ hr {
 }
 
 .time {
-   font-size: 25px;
+   font-family: var(--fmono);
+   font-size: 1.56rem;
    width: 25%;
    text-align: right;
    display: flex;
@@ -193,7 +221,8 @@ hr {
 }
 
 .date {
-   font-size: 14px;
+   font-family: var(--fmono);
+   font-size: 0.875rem;
    text-align: center;
    display: flex;
    justify-content: center;
@@ -248,7 +277,7 @@ input:checked + .handle {
    position: absolute;
    visibility: hidden;
    width: 100px;
-   font-size: 0.8em;
+   font-size: 0.8rem;
    background-color: var(--tx);
    color: var(--bg);
    text-align: center;
@@ -312,7 +341,7 @@ a:link {
 }
 
 a:hover {
-   color: black;
+   color: var(--glo);
    text-shadow: 0 0 1px var(--tx), 0 0 2px var(--tx5), 0 0 3px var(--tx5);
 }
 
@@ -355,10 +384,10 @@ a:visited {
 
 @media screen and (max-width: 500px) {
    .title {
-      font-size: 75px;
+      font-size: 4.7rem;
    }
    .head-space-l, .head-space-r {
-      font-size: 15px;
+      font-size: 1rem;
    }
 }
 
@@ -374,16 +403,16 @@ a:visited {
 
 @media screen and (max-width: 400px) {
    .title {
-      font-size: 60px;
+      font-size: 3.75rem;
    }
    .date {
-      font-size: 12px;
+      font-size: 0.75rem;
    }
 }
 
 @media screen and (max-width: 300px) {
    .title {
-      font-size: 50px;
+      font-size: 3.125rem;
    }
    .head-space-l, .head-space-r {
       display: none;
