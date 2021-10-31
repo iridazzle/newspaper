@@ -1,8 +1,10 @@
 let THENEWSAPI = "itV4cbFUXsuNfzGubDIN2nGnaOPFxs6H0Pl0Cxc0";
 
+// angular app
 var newspaper = angular.module("newspaper", []);
 
 newspaper.controller("newsCtrl", function($scope, $http) {
+   //make api calls and retreive data
    var url1 = "https://api.thenewsapi.com/v1/news/top?locale=us&language=en&domains=apnews.com&page=1&api_token=" + THENEWSAPI;
    $http.get(url1)
    .then(function(response) {
@@ -55,16 +57,19 @@ newspaper.controller("newsCtrl", function($scope, $http) {
    */
 });
 
+//font toggle
 function switchFont() {
    document.getElementById("font-switch").classList.toggle("checked");
    document.documentElement.classList.toggle("open-dyslexic");
 };
 
+// theme toggle
 function switchColor() {
    document.getElementById("color-switch").classList.toggle("checked");
    document.documentElement.classList.toggle("dark");
 }
 
+// date and time function
 setInterval(function() {
    var d = new Date();
    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
