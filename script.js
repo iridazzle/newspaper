@@ -1,6 +1,4 @@
-let THENEWSAPI = "AOTJAYPkYuDSHd9buWVDNjkqQWY8rkDe172ygpTv";
-//let NEWSAPI = ;
-//let NEWSDATA = ;
+let THENEWSAPI = "itV4cbFUXsuNfzGubDIN2nGnaOPFxs6H0Pl0Cxc0";
 
 var newspaper = angular.module("newspaper", []);
 
