@@ -253,7 +253,8 @@ input:checked + .handle {
    color: var(--bg);
    text-align: center;
    border-radius: 7px;
-   transition: 0.3s;
+   opacity: 0;
+   transition: opacity 0.3s;
    top: 135%;
    left: 50%;
    margin-left: -50px;
@@ -272,6 +273,7 @@ input:checked + .handle {
 
 .switch:hover .tooltiptext{
    visibility: visible;
+   opacity: 1;
 }
 
 .first {
