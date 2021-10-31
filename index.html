@@ -14,9 +14,32 @@
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
    </head>
    <body ng-app = "newspaper" class = "serif-main">
+      <div class = "options">
+         <label class = "font-switch" id = "font-switch">
+            <input type = "checkbox" onchange = "switchFont()" />
+            <span class = "handle font-handle">A</span>
+         </label>
+         <script>
+            function switchFont() {
+               document.getElementById("font-switch").classList.toggle("checked");
+               var serifEls = document.querySelectorAll(".serif-main, .serif-h, .title")
+               for (var i = 0; i < serifEls.length; i++) {
+                  var el = serifEls.item(i);
+                  console.log(el);
+                  el.classList.toggle("open-dyslexic");
+               }
+               var monoEls = document.getElementsByClassName("serif-mono");
+               for (var i = 0; i < monoEls.length; i++) {
+                  var el = monoEls.item(i);
+                  console.log(el);
+                  el.classList.toggle("dyslexic-mono");
+               }
+            };
+         </script>
+      </div>
       <header>
          <div class = "header-row">
-            <span class = "slogan">Just another news aggregate.</span>
+            <span class = "slogan serif-h">Just another news aggregate.</span>
             <span class = "title">Newspaper</span>
             <span id = "time" class = "time serif-mono">
                <script>
@@ -32,7 +55,7 @@
          </div>
          <hr />
          <div class = "header-row">
-            <span class = "head-space-l">VOL.0...No.0 </span>
+            <span class = "head-space-l serif-h">VOL.0...No.0 </span>
             <span id = "date" class = "date serif-mono">
                <script>
                   setInterval(function() {
@@ -47,27 +70,14 @@
                   }, 1000);
                </script>
             </span>
-            <span class = "head-space-r">$0.00</span>
+            <span class = "head-space-r serif-h">$0.00</span>
          </div>
          <hr />
-         <nav class = "menu">
-            <label class = "font-switch" id = "font-switch">
-               <input type = "checkbox" onchange = "switchFont()" />
-               <span class = "handle"></span>
-            </label>
-            <script>
-               function switchFont() {
-                  document.getElementById("font-switch").classList.toggle("checked");
-                  document.getElementsByClassName(".serif-main .serif-h").classList.toggle("open-dyslexic");
-                  document.getElementsByClassName(".serif-mono").classList.toggle("dyslexic-mono");
-               };
-            </script>
-         </nav>
       </header>
       <main id = "news-app" ng-controller = "newsCtrl">
          <div class = "articles">
             <article ng-repeat = "n in news">
-               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2>{{ n.title }}</h2></a>
+               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
                <p>{{ n.snippet }}</p>
             </article>

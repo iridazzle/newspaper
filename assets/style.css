@@ -43,6 +43,20 @@
    scrollbar-color: transparent #ddcc99;
 }
 
+/* font groups */
+
+.serif-main {
+   font-family: Merryweather, Bitter, "Times New Roman", serif
+}
+
+.serif-h {
+   font-family: Gupter, Almendra, serif;
+}
+
+.serif-mono {
+   font-family: "Courier Prime", monospace;
+}
+
 .open-dyslexic {
    font-family: OpenDyslexic !important;
 }
@@ -79,15 +93,26 @@ img{
    height: auto;
 }
 
-header {
+.options {
+   position: sticky;
+   top: 0;
    width: 100%;
    background-image: url(./sepia-paper.jpg);
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
    background-color: #ddcc99;
+   padding: 10px 20px;
+}
+
+.info {
+   position: absolute;
+}
+
+header {
+   width: 100%;
    margin: 0;
-   padding: 0 20px;
+   padding: 30px 20px 0;
    top: 0;
 }
 
@@ -162,11 +187,11 @@ nav.menu {
 
 .font-switch {
    cursor: pointer;
-   position: relative;
+   position: absolute;
    background: gray;
    width: 70px;
    height: 35px;
-   border-radius: 50px;
+   border-radius: 35px;
    transition: 0.3s;
 }
 
@@ -185,6 +210,9 @@ input[type = checkbox] {
    background: #ffffff;
    border-radius: 25px;
    transition: 0.3s;
+   display: flex;
+   justify-content: center;
+   align-items: center;  
 }
 
 .checked {
