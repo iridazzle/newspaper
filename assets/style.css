@@ -212,7 +212,7 @@ input[type = checkbox] {
    transition: 0.3s;
    display: flex;
    justify-content: center;
-   align-items: center;  
+   align-items: center;
 }
 
 .checked {
@@ -224,8 +224,22 @@ input:checked + .handle {
    transform: translateX(-100%);
 }
 
+.first {
+   grid-area: art-m;
+}
+
+.oth {
+   grid-area: art;
+}
+
 .articles {
-   padding: 0 10px 10px;
+   padding: 10px;
+   display: grid;
+   grid-template-areas:
+      "art art-m art-m art"
+      "art art-m art-m art"
+      "art art art art art";
+   gap: 10px;
 }
 
 article{

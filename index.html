@@ -5,7 +5,6 @@
       <meta name = "robots" content = "noindex, nofollow, noarchive, nocache, noimageindex, notranslate, nosnippet" />
       <title>Newspaper</title>
       <link rel = "stylesheet" href = "/assets/style.css" type = "text/css" />
-      <link rel = "stylesheet" href = "/assets/serif-font.css" type = "text/css" />
       <script crossorigin src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
       <script src = "script.js"></script>
@@ -16,23 +15,6 @@
             <input type = "checkbox" onchange = "switchFont()" />
             <span class = "handle font-handle">A</span>
          </label>
-         <script>
-            function switchFont() {
-               document.getElementById("font-switch").classList.toggle("checked");
-               var serifEls = document.querySelectorAll(".serif-main, .serif-h, .title")
-               for (var i = 0; i < serifEls.length; i++) {
-                  var el = serifEls.item(i);
-                  console.log(el);
-                  el.classList.toggle("open-dyslexic");
-               }
-               var monoEls = document.getElementsByClassName("serif-mono");
-               for (var i = 0; i < monoEls.length; i++) {
-                  var el = monoEls.item(i);
-                  console.log(el);
-                  el.classList.toggle("dyslexic-mono");
-               }
-            };
-         </script>
       </div>
       <header>
          <div class = "header-row">
@@ -73,7 +55,7 @@
       </header>
       <main id = "news-app" ng-controller = "newsCtrl">
          <div class = "articles">
-            <article ng-repeat = "n in news">
+            <article ng-repeat = "n in news1">
                <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
                <p>{{ n.snippet }}</p>
