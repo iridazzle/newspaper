@@ -67,6 +67,13 @@ function switchFont() {
 function switchColor() {
    document.getElementById("color-switch").classList.toggle("checked");
    document.documentElement.classList.toggle("dark");
+
+   if(document.documentElement.classList.contains("dark")) {
+      document.getElementById("handle").innerHTML = "🌞";
+   }
+   else {
+      document.getElementById("handle").innerHTML = "🌜";
+   }
 }
 
 // date and time function
