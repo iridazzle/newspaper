@@ -2,13 +2,31 @@
 @import "./fonts/WashingtonText.css";
 @import "./fonts/OpenDyslexic.css";
 
+:root, :root.light {
+   --im: url(./sepia-paper.jpg);
+   --bg: #ddcc99;
+   --tx:  #502200;
+   --tx5: #50220080;
+   --vis: #331100;
+   --btn: #ffffff;
+}
+
+:root.dark {
+   --im: url(./dark-paper.jpg);
+   --bg: #502200;
+   --tx: #ddcc99;
+   --tx5: #ddcc9980;
+   --vis: #ccbb66;
+   --btn: #000000;
+}
+
 * {
    box-sizing: border-box;
 }
 
 ::selection {
-   color: #ddcc99;
-   background: #502200;
+   color: var(--bg);
+   background: var(--tx);
 }
 
 ::-webkit-scrollbar {
@@ -17,30 +35,30 @@
 }
 
 ::-webkit-scrollbar-track {
-   box-shadow: inset 0 0 10px 5px #502200;
+   box-shadow: inset 0 0 10px 5px var(--tx);
    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-   background: #ddcc99;
-   box-shadow: inset 0 0 4px 2px #502200;
+   background: var(--bg);
+   box-shadow: inset 0 0 4px 2px var(--tx);
    border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-   background: #502200;
-   box-shadow: inset 0 0 8px 4px #ddcc99;
+   background: var(--tx);
+   box-shadow: inset 0 0 8px 4px var(--bg);
    border-radius: 15px;
 }
 
 ::-webkit-scrollbar-corner {
-   box-shadow: inset 0 0 10px 5px #ddcc99;
+   box-shadow: inset 0 0 10px 5px var(--bg);
    background: transparent;
 }
 
 * {
    scrollbar-width: 15px;
-   scrollbar-color: transparent #ddcc99;
+   scrollbar-color: transparent var(--bg);
 }
 
 /* font groups */
@@ -79,12 +97,12 @@ body {
    height: 100%;
    padding: 0px;
    overflow: auto;
-   background-image: url(./sepia-paper.jpg);
+   background-image: var(--im);
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
-   background-color: #ddcc99;
-   color: #502200;
+   background-color: var(--bg);
+   color: var(--tx);
    overflow-wrap: break-word;
 }
 
@@ -98,11 +116,11 @@ img{
    top: 0;
    width: 100%;
    height: 50px;
-   background-image: url(./sepia-paper.jpg);
+   background-image: var(--im);
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
-   background-color: #ddcc99;
+   background-color: var(--bg);
    padding: 10px 20px;
 }
 
@@ -126,8 +144,8 @@ div.header-row {
 hr {
    border: none;
    height: 1px;
-   color: #502200;
-   background: #502200;
+   color: var(--tx);
+   background: var(--tx);
 }
 
 .title{
@@ -139,7 +157,7 @@ hr {
 .slogan {
    font-weight: bold;
    width: 20%;
-   border: 1px solid #502200;
+   border: 1px solid var(--tx);
    text-align: center;
    padding: 10px;
    display: flex;
@@ -186,7 +204,7 @@ nav.menu {
    display: flex;
 }
 
-.font-switch {
+.switch {
    cursor: pointer;
    position: absolute;
    top: 0;
@@ -209,7 +227,7 @@ input[type = checkbox] {
    left: 5px;
    width: 25px;
    height: 25px;
-   background: #ffffff;
+   background: var(--btn);
    border-radius: 25px;
    transition: 0.3s;
    display: flex;
@@ -218,7 +236,7 @@ input[type = checkbox] {
 }
 
 .checked {
-   background: #502200;
+   background: var(--tx);
 }
 
 input:checked + .handle {
@@ -231,8 +249,8 @@ input:checked + .handle {
    visibility: hidden;
    width: 100px;
    font-size: 0.8em;
-   background-color: #502200;
-   color: #ddcc99;
+   background-color: var(--tx);
+   color: var(--bg);
    text-align: center;
    border-radius: 7px;
    transition: 0.3s;
@@ -249,10 +267,10 @@ input:checked + .handle {
    margin-left: -5px;
    border-width: 5px;
    border-style: solid;
-   border-color: transparent transparent #502200 transparent;
+   border-color: transparent transparent var(--tx)transparent;
 }
 
-.font-switch:hover .tooltiptext{
+.switch:hover .tooltiptext{
    visibility: visible;
 }
 
@@ -275,7 +293,7 @@ article{
    display: inline-block;
    margin: 10px;
    padding: 10px;
-   border: 1px solid #502200;
+   border: 1px solid var(--tx);
    vertical-align: top;
 }
 
@@ -288,14 +306,14 @@ a {
 }
 
 a:link {
-   color: #502200;
+   color: var(--tx);
 }
 
 a:hover {
    color: black;
-   text-shadow: 0 0 1px #502200, 0 0 2px #50220080, 0 0 3px #50220080;
+   text-shadow: 0 0 1px var(--tx), 0 0 2px var(--tx5), 0 0 3px var(--tx5);
 }
 
 a:visited {
-   color: #331100;
+   color: var(--vis);
 }

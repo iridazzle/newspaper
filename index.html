@@ -11,10 +11,15 @@
    </head>
    <body ng-app = "newspaper" class = "serif-main">
       <div class = "options">
-         <label class = "font-switch" id = "font-switch">
+         <label class = "switch" id = "font-switch">
             <input type = "checkbox" onchange = "switchFont()" />
-            <span class = "handle font-handle">A</span>
+            <span class = "handle">A</span>
             <span class = "tooltiptext">Toggle OpenDyslexic Font</span>
+         </label>
+         <label class = "switch" style = "left: 100px;" id = "color-switch">
+            <input type = "checkbox" onchange = "switchColor()" />
+            <span class = "handle">☾☀</span>
+            <span class = "tooltiptext">Toggle Color Theme</span>
          </label>
       </div>
       <header>

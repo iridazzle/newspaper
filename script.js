@@ -71,6 +71,11 @@ function switchFont() {
    }
 };
 
+function switchColor() {
+   document.getElementById("color-switch").classList.toggle("checked");
+   document.documentElement.classList.toggle("dark");
+}
+
 setInterval(function() {
    var d = new Date();
    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
