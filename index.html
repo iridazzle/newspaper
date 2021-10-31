@@ -74,9 +74,11 @@
       <main id = "news-app" ng-controller = "newsCtrl">
          <div class = "articles">
             <article ng-repeat = "n in news">
-               <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
-               <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
-               <p>{{ n.snippet }}</p>
+              <div ng-class="{first: $first}">
+                <a href = "{{ n.url }}" target = "_blank" rel = "noopener noreferrer"><h2 class = "serif-h">{{ n.title }}</h2></a>
+                <img src = "{{ n.image_url }}" alt = "{{ n.keywords }}" />
+                <p>{{ n.snippet }}</p>
+              </div>
             </article>
          </div>
       </main>
